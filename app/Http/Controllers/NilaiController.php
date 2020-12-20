@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\Score;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class NilaiController extends Controller
 {
@@ -20,6 +22,16 @@ class NilaiController extends Controller
         ->select('subjects.nama', 'scores.nilai')
         ->get();
         return view('FP.akademik2', ['score' => $score]);
+    }
+
+    public function cetak_pdf(){
+        $score = DB::table('scores')
+        ->join('subjects','scores.subject_id', '=', 'subjects.id')
+        ->select('subjects.nama', 'scores.nilai')
+        ->get();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadview('FP.nilai_pdf',['score'=>$score]);
+        return $pdf->stream();
     }
 
     /**
@@ -76,7 +88,7 @@ class NilaiController extends Controller
     {
         //
     }
-
+       
     /**
      * Remove the specified resource from storage.
      *

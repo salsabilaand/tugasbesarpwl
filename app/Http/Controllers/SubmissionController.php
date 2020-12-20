@@ -39,7 +39,7 @@ class SubmissionController extends Controller
             'gaji' => $request->gaji,
             'alasan' => $request->alasan,
             ]);
-        return redirect('/beranda');
+        return redirect('/beranda')->with('toast_success', 'Pengajuan Berhasil Dikirim!');
     }
 
     /**
@@ -50,7 +50,7 @@ class SubmissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

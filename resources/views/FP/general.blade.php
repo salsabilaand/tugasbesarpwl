@@ -29,7 +29,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <a href="{{ url ('/') }}" class="btn btn-warning">Log Out</a>
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @endsection

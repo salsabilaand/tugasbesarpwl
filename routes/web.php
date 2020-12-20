@@ -23,6 +23,7 @@ Route::get('/akademik2', 'NilaiController@index');
 Route::get('/spp', 'SppController@index');
 Route::get('/submission/add','SubmissionController@add');
 Route::post('/submission/create','SubmissionController@create');
+Route::get('/akademik2/cetak_pdf', 'NilaiController@cetak_pdf');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

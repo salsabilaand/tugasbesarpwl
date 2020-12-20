@@ -34,7 +34,7 @@
                                     @endforeach
                             </tbody>
                         </table>
-                        <a href="https://drive.google.com/file/d/1wDzJ7Sfgvq9QsC1DeXlpYyOJy5Q7nbp2/view?usp=sharing" class="btn btn-primary">Cetak</a>    
+                        <a href="/akademik2/cetak_pdf" class="btn btn-primary" target="_blank">Cetak</a>    
                 </div>
             </div>
         </div>            

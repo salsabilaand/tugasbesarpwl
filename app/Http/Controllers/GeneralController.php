@@ -76,7 +76,7 @@ class GeneralController extends Controller
         $mahasiswa = Student::find($id);
         $mahasiswa->email = $request->email;
         $mahasiswa->save();
-        return redirect('/general');
+        return redirect('/general')->with('toast_success', 'Berhasil DiUpdate!');
     }
 
     /**
